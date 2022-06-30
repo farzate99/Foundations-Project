@@ -1,6 +1,5 @@
 package com.automation.poms;
 
-import com.automation.Utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -61,9 +60,9 @@ public class Login {
 
     }
 
-    // this method will make selenium click on our login button
+    
     public void clickButton() {
-        // to click on an element you just use the click() method
+        
         this.loginButton.click();
     }
 

@@ -33,7 +33,7 @@
              if(usernameTesterPage === person.assignedTo && person.status==="Pending"){
 
                 result = result + `<tr><td>${person.defectId}</td> <td> ${person.desc} </td> <td> <select id="${person.defectId}">
-        <option value="" >select one</option>
+        <option value="">select one</option>
         <option value="Accepted"> Accept </option>
         <option value="Declined"> Decline</option>
     </select></td> <td> <button onclick="acceptordecline(${person.defectId})">submit</button></td></tr>`

@@ -1,10 +1,10 @@
 Feature: Testers should be able to update defects so they can monitor their progress
 
-  # Scenario: update from pending to accepted
-  #   Given   the tester is on the tester homepage
-  #   When    the tester selects accepted from a dropdown list
+  Scenario: update from pending to accepted
+    Given   the tester is on the tester homepage
+    When    the tester selects accepted from a dropdown list
   #  When    the tester clicks submit
-  #  Then    the tester receives a popup saying updated
+#  Then    the tester receives a popup saying updated
 
 # Scenario: update from pending to declined
 # Given   the tester is on the tester homepage

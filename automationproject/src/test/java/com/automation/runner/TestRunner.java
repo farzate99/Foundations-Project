@@ -41,8 +41,8 @@ public class TestRunner {
         tester = new Tester(driver);
      
         // the WebDriverWait is used to tell Selenium to wait up to a set amount of time for a given condition
-        wait = new WebDriverWait(driver, 3);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 5);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @AfterClass // this makes the method execute after all the steps

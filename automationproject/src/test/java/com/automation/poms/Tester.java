@@ -19,11 +19,12 @@ public class Tester {
    @FindBy(css = "#tableDefect tr:last-child select")
    public WebElement selectPending;
 
-   @FindBy(css = "#tableDefect tr:last-child select [value=Accepted]")
-   public WebElement acceptValue;
 
-   @FindBy(css = "#tableDefect tr:last-child button")
-   public WebElement submitButton;
+   //@FindBy(css = "[value=Accepted]")
+   //public WebElement acceptValue;
+
+   // @FindBy(css = "#tableDefect tr:last-child button")
+   // public WebElement submitButton;
 
    public Tester(WebDriver driver) {
       this.driver = driver;
@@ -42,10 +43,11 @@ public class Tester {
     * return tds.get(2).getText();
     */
 
-   // public void selectPending() {
-   //    this.selectPending.click();
-   //    this.acceptValue.click();
-   // }
+   public void selectPending() {
+     this.selectPending.click();
+     // this.acceptValue.click();
+
+   }
 
    // public void clickSubmitButton() {
 

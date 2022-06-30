@@ -1,6 +1,5 @@
 package com.automation.steps;
 
-import com.automation.Utilities;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -21,11 +20,11 @@ public class LoginSteps {
         // when telling selenium to get a local file you have to add File:// to the
         // start of the url
         TestRunner.driver.get(
-                "File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/automationproject/src/test/resources/manager-page.html");
+                "File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/automationproject/src/test/resources/login.html");
     }
 
     @When("the employee clicks the login button")
-    public void the_employee_clicks_the_login_button() throws InterruptedException {
+    public void the_employee_clicks_the_login_button() {
 
         TestRunner.login.clickButton();
 
@@ -47,8 +46,7 @@ public class LoginSteps {
 
     @Then("the manager should be logged in to the manager home page")
     public void the_manager_should_be_logged_in_to_the_manager_home_page() {
-        // this method checks that my simulated manager has actually ended up on the
-        // manager page
+        
 
         TestRunner.wait.until(ExpectedConditions.titleIs("Manager Page"));
         String title = TestRunner.driver.getTitle();
@@ -78,8 +76,7 @@ public class LoginSteps {
 
     @Given("The manager is on the manager homepage")
     public void the_manager_is_on_the_manager_homepage() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+     
     }
 
 }

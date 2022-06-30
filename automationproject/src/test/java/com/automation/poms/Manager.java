@@ -1,6 +1,5 @@
 package com.automation.poms;
 
-import com.automation.Utilities;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,7 +71,7 @@ public class Manager {
    }
 
    public String getPopupText() {
-      WebDriverWait wait = new WebDriverWait(driver, 30);
+      WebDriverWait wait = new WebDriverWait(driver, 5);
       wait.until(ExpectedConditions.alertIsPresent());
       Alert alert = driver.switchTo().alert();
 
