@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Manager Page</title>
+    <h1> Welcome Manager</h1>
+    
+</head>
+
+<body onload="getTesters()">
+
+    <input type="text" id="Create_defect">
+    <br>
+
+    <br><br><br>
+
+    <select name="tester" id="testerSelect">
+
+    </select>
+    <br>
+
+    <button onclick="assignDefect()"> assign </button>
+</body>
+<script>
+    const input = document.getElementById("text")
+    const testerSelect = document.getElementById("testerSelect")
+
+    async function assignDefect() {
+        Create_defect = document.getElementById("Create_defect").value;
+
+        let defect = {
+
+            defectId: 27273,
+            assignedTo: testerSelect.options[testerSelect.selectedIndex].value,
+            dateReported: 0,
+            status: "Pending",
+            desc: Create_defect,
+            stepsToReproduce: "string",
+            severity: "Low",
+            priority: "Low"
+        }
+
+
+
+        let defectJSON = JSON.stringify(defect);
+        console.log(defectJSON);
+        let config = {
+            method: 'POST',
+            headers: { 'Content-Type': "application/json" },  
+            body: defectJSON
+        }
+        let httpResponse = await fetch("https://bugcatcher.coe.revaturelabs.com/9/defects", config); console.log(httpResponse);
+        if (httpResponse.status === 201) { 
+            let responseBody = await httpResponse.json(); 
+            alert("data submitted successfully");
+        } else {
+            let responseBody = await httpResponse.json();
+            console.log(responseBody);
+            alert("data not submitted");
+        }
+
+
+    }
+
+    async function getTesters() {
+        let httpResponse = await fetch("https://bugcatcher.coe.revaturelabs.com/9/employees"); console.log(httpResponse);
+        if (httpResponse.status === 200) { // 200 basically means request made successfully
+            let responseBody = await httpResponse.json(); // remember, json() returns a promise, so we use await to get the data we want out of i
+            console.log(responseBody);
+            testerSelect.innerHTML = "";
+            let result = `<option value="">Select One</option>`
+            for (person of responseBody) {
+                console.log(person.role)
+                if (person.role === "Tester") {
+                    console.log(person.username)
+                    result = result + `<option value="${person.username}">${person.username}</option>`
+                    testerSelect.innerHTML = result;
+                }
+
+            }
+        } else {
+            let responseBody = await httpResponse.json();
+            console.log(responseBody);// remember, json() returns a promise, so we use await to get the data we want out of it
+            alert("data not submitted");
+        }
+    }
+
+
+</script>
+
+</html>
