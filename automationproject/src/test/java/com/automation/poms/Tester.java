@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.NewSessionPayload;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class Tester {
 
@@ -19,40 +20,73 @@ public class Tester {
    @FindBy(css = "#tableDefect tr:last-child select")
    public WebElement selectPending;
 
+   @FindBy(css = "#tableDefect tr:last-child select [value=Declined]")
+   public WebElement declineValue;
+   
 
-   //@FindBy(css = "[value=Accepted]")
-   //public WebElement acceptValue;
+   @FindBy(css = "#tableDefect tr:last-child select [value=Accepted]")
+   public WebElement acceptValue;
 
-   // @FindBy(css = "#tableDefect tr:last-child button")
-   // public WebElement submitButton;
+   @FindBy(css = "#tableDefect tr:last-child button")
+   public WebElement submitButton;
+
+
+   @FindBy(id="acceptedDefects")
+   public WebElement acceptedDefectsTable;
+
+
+   @FindBy(css = "#acceptedDefects tr:last-child select")
+   public WebElement selectorValue;
+   
+   @FindBy(css ="#acceptedDefects tr:last-child button")
+   public WebElement acceptSubmitButton;
+
+   @FindBy(css = "#acceptedDefects tr:last-child select [value=Rejected]")
+   public WebElement rejectValue;
+
+   @FindBy(css = "#acceptedDefects tr:last-child select [value=Fixed]")
+   public WebElement fixValue;
+
+   @FindBy(css = "#acceptedDefects tr:last-child select [value=Shelved]" )
+   public WebElement shelveValue;
 
    public Tester(WebDriver driver) {
       this.driver = driver;
 
       PageFactory.initElements(driver, this);
    }
-   /*
-    * public String getFirstRow(){
-    * List<WebElement> tableRows = (List<WebElement>)
-    * this.driver.findElement(By.xpath("//*[@id=\"tableDefect\"]/tbody/tr"));
-    * WebElement newRow = tableRows.get(tableRows.size()-1);
-    * 
-    * List<WebElement> tds = (List<WebElement>)
-    * newRow.findElement(By.tagName("td"));
-    * 
-    * return tds.get(2).getText();
-    */
 
-   public void selectPending() {
-     this.selectPending.click();
-     // this.acceptValue.click();
+   public void selectPendingAccept() {
+      this.selectPending.click();
+      this.acceptValue.click();
 
    }
 
-   // public void clickSubmitButton() {
+   public void selectPendingDecline() {
+      this.selectPending.click();
+      this.declineValue.click();
+   }
 
-   // // to click on an element you just use the click() method
-   // this.submitButton.click();
+    public void selectReject(){
+      this.selectorValue.click();
+      this.rejectValue.click();
+    }
 
-   // }
+    public void selectFix(){
+      this.selectorValue.click();
+      this.fixValue.click();
+    }
+
+    public void selectShelve(){
+      this.selectorValue.click();
+      this.shelveValue.click();
+    }
+   public void clickSubmitButton () {
+      // to click on an element you just use the click() method
+      this.submitButton.click();
+
+   }
+   public void acceptedSubmitButton2(){
+      this.acceptSubmitButton.click();
+   }
 }

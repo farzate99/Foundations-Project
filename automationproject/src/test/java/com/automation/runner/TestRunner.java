@@ -33,7 +33,7 @@ public class TestRunner {
         // make sure to set the value for the key as the full relative path to the chromedriver.exe
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions optionsChrome= new ChromeOptions();
-        optionsChrome.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.IGNORE);
+        //optionsChrome.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.IGNORE);
         driver = new ChromeDriver(optionsChrome);
 
         login = new Login(driver);
@@ -41,7 +41,7 @@ public class TestRunner {
         tester = new Tester(driver);
      
         // the WebDriverWait is used to tell Selenium to wait up to a set amount of time for a given condition
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 7);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 

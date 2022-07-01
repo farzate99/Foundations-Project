@@ -46,21 +46,17 @@ public class Login {
 
     // this method will allow both managers and testers to enter their usernames
     public void enterUsername(String username) {
-
         // to enter a username into the input element we use the sendKeys() method
         this.usernameInput.sendKeys(username);
-
     }
 
     // this method will allow both managers and testers to enter their passwords
     public void enterPassword(String password) {
-
         // to enter a password into the input element we use sendKeys() again
         this.passwordInput.sendKeys(password);
 
     }
 
-    
     public void clickButton() {
         
         this.loginButton.click();

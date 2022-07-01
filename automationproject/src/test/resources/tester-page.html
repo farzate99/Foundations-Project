@@ -71,7 +71,7 @@ async function acceptordecline(value){
         }
         let httpResponse = await fetch(`https://bugcatcher.coe.revaturelabs.com/9/defects/${value}`,config);
         if(httpResponse.status === 204){
-            alert("updated")
+           alert("updated")
         }
         getDefectPending();
 }

@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ManagerSteps {
     /*
@@ -36,8 +37,8 @@ public class ManagerSteps {
 
     @Then("the manager receives a popup stating that the bug was assigned")
     public void the_manager_receives_a_popup_stating_bug_was_assigned() {
-        // String popupText = TestRunner.manager.getPopupText();
-
-        // Assert.assertEquals("data submitted successfully", popupText);
+        TestRunner.wait.until(ExpectedConditions.alertIsPresent());
+        Assert.assertEquals("data submitted successfully", TestRunner.driver.switchTo().alert().getText());
+        TestRunner.driver.switchTo().alert().accept();
     }
 }
