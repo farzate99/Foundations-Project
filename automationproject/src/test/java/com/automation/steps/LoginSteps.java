@@ -17,8 +17,7 @@ public class LoginSteps {
 
     @Given("the employee is on the login page")
     public void the_employee_is_on_the_login_page() {
-        // when telling selenium to get a local file you have to add File:// to the
-        // start of the url
+
         TestRunner.driver.get(
                 "File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/automationproject/src/test/resources/login.html");
     }
@@ -46,7 +45,6 @@ public class LoginSteps {
 
     @Then("the manager should be logged in to the manager home page")
     public void the_manager_should_be_logged_in_to_the_manager_home_page() {
-        
 
         TestRunner.wait.until(ExpectedConditions.titleIs("Manager Page"));
         String title = TestRunner.driver.getTitle();
@@ -74,9 +72,6 @@ public class LoginSteps {
         Assert.assertEquals("Tester Homepage", title);
     }
 
-    @Given("The manager is on the manager homepage")
-    public void the_manager_is_on_the_manager_homepage() {
-     
-    }
+
 
 }

@@ -82,7 +82,7 @@ public class Tester {
       this.shelveValue.click();
     }
    public void clickSubmitButton () {
-      // to click on an element you just use the click() method
+      
       this.submitButton.click();
 
    }

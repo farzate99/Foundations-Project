@@ -9,16 +9,14 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ManagerSteps {
-    /*
-        User agnostic steps below
-     */
 
     @Given("the manager is on the manager page")
     public void the_manager_is_on_the_manager_page() {
-        // when telling selenium to get a local file you have to add File:// to the start of the url
-        TestRunner.driver.get("File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/automationproject/src/test/resources/manager-page.html");
+        // when telling selenium to get a local file you have to add File:// to the
+        // start of the url
+        TestRunner.driver.get(
+                "File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/automationproject/src/test/resources/manager-page.html");
     }
-   
 
     @When("the manager enters the defect")
     public void the_manager_enters_the_defect() {

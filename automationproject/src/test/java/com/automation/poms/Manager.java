@@ -10,47 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Manager {
 
-   private WebDriver driver; // this driver will only be used internally (in the class) so it is private
+   private WebDriver driver;
 
-   // these web elements need to be referenced in our steps so they are public
-   // this tells the PageFactory to find the element with the id username and
-   // assign it to this field
    @FindBy(id = "Create_defect")
    public WebElement createDefectInput;
 
-   // this tells the PageFactory to find the element with the id password and
-   // assign it to this field
    @FindBy(id = "testerSelect")
    public WebElement testerSelector;
 
-   // this tells the PageFactory to find the element with the id password and
-   // assign it to this field
    @FindBy(css = "[value=squid1]")
    public WebElement squid1Tester;
 
-   // this tells the PageFactory to find the first element created via button tags
-   // and assign it to this field
    @FindBy(tagName = "button")
    public WebElement assignButton;
 
    public Manager(WebDriver driver) {
-      this.driver = driver; // this initializes the private driver field
+      this.driver = driver;
 
-      /*
-       * The PageFactory class is provided by Selenium and it abstracts away from us
-       * the code that handles
-       * initializing our WebElement fields. We simpply provide the initElements()
-       * method with the privite driver
-       * we initialize above, and the PageFactory class handles the rest!
-       */
       PageFactory.initElements(driver, this);
    }
-
-   /*
-    * these methods are public so we can access them in the steps, and their return
-    * type is void because
-    * the functions do not return any values: they just interact with the web page
-    */
 
    public void enterDefect(String defectName) {
 
@@ -63,10 +41,8 @@ public class Manager {
       this.squid1Tester.click();
    }
 
-   // this method will make selenium click on our login button
    public void clickAssignButton() {
 
-      // to click on an element you just use the click() method
       this.assignButton.click();
    }
 

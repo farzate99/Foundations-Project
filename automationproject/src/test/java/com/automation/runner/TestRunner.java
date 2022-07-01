@@ -28,9 +28,9 @@ public class TestRunner {
     public static WebDriverWait wait;
     public static Tester tester;
 
-    @BeforeClass // this makes the method execute before all the steps
+    @BeforeClass 
     public static void setup(){
-        // make sure to set the value for the key as the full relative path to the chromedriver.exe
+        
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         ChromeOptions optionsChrome= new ChromeOptions();
         //optionsChrome.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.IGNORE);

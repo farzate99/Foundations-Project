@@ -23,7 +23,7 @@ public class TesterSteps {
         TestRunner.login.enterUsername("squid1");
         TestRunner.login.enterPassword("password");
         TestRunner.login.clickButton();
-        // TestRunner.driver.get("File://C:/Users/Dulce/Desktop/Revature/Week4/Login-Automation/Foundations-Project/src/test/resources/tester-page.html");
+    
 
     }
 
@@ -46,9 +46,7 @@ public class TesterSteps {
         TestRunner.wait.until(ExpectedConditions.alertIsPresent());
         TestRunner.driver.switchTo().alert().accept();
     }
-    // @Then("the tester receives a popup saying updated")
-    // public void the_tester_receives_a_popup_saying_updated() {
-    // // Write code here that turns the phrase above into concrete actions
+ 
 
     // TestRunner.wait.until(ExpectedConditions.alertIsPresent());
     // Assert.assertEquals("updated",
