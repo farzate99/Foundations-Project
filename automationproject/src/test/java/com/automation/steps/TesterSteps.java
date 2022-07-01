@@ -63,13 +63,14 @@ public class TesterSteps {
         TestRunner.tester.selectReject();
     }
 
+    @When("the tester selects fixed from a dropdown list")
+    public void the_tester_selects_fixed_from_a_dropdown_list() {
+        TestRunner.tester.selectFix();
+    }
+    
     @When("the tester selects shelved from a dropdown list")
     public void the_tester_selects_shelved_from_a_dropdown_list() {
         TestRunner.tester.selectShelve();
     }
 
-    @When("the tester selects fixed from a dropdown list")
-    public void the_tester_selects_fixed_from_a_dropdown_list() {
-        TestRunner.tester.selectFix();
-    }
 }
